@@ -1,0 +1,15 @@
+{
+  "EnvironmentVariables": [
+    {
+      "SchemaName": "demo_variable_env",
+      "Value": "Test"
+    }
+  ],
+  "ConnectionReferences": [
+    {
+      "LogicalName": "demo_sharedcommondataserviceforapps_636cf",
+      "ConnectionId": "4445162937b84457a3465d2f0c2cab7e",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+    }
+  ]
+}

@@ -348,3 +348,22 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Fody - auto-generated XML schema
+FodyWeavers.xsd
+
+# dependencies
+/[Nn]ode_modules
+
+# generated directory
+**/[Gg]enerated
+
+# output directory
+/[Oo]ut
+
+# Added to block values in source (May not be needed any longer)
+environment_variable_values.json
+environmentvariablevalues.json
+
+# Added to block site settings in source (Use if secrets are used in site settings)
+#[Ss]itesetting.yml

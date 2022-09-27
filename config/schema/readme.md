@@ -1,0 +1,1 @@
+https://docs.microsoft.com/en-us/power-platform/admin/create-schema-export-configuration-data
