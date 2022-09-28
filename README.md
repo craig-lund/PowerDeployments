@@ -3,7 +3,7 @@ Power Platform projects are used for defining, tracking, developing, and deployi
 User branches store all developed code. Strict nameing conventions are critial to how automation works. Follow the conventions and guidelines indiecated below.
 
 # Getting Started
-1. Determin your solution Strategy. [Solution Concepts](https://learn.microsoft.com/en-us/power-platform/alm/solution-concepts-alm)
+1. Determine your solution strategy. [Solution Concepts](https://learn.microsoft.com/en-us/power-platform/alm/solution-concepts-alm)
     create the **solution** or **portal** you will be working on.
 2. Determin your portal strategy. [Power Portals](https://learn.microsoft.com/en-us/power-apps/maker/portals/)
 ## Contribute
