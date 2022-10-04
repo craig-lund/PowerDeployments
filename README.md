@@ -20,7 +20,7 @@ Follow these steps when creating a user branch.
     - The solution name will be parsed from the '**System.PullRequest.SourceBranch**' Azure DevOps variable.
     - The portal name will be parsed from the '**System.PullRequest.SourceBranch**' Azure DevOps variable.
 ## Environments
-Example (adjust to meet organization needs) [Environment Strategy](https://learn.microsoft.com/en-us/power-platform/alm/environment-strategy-alm)
+Example: (adjust to meet organization needs) [Environment Strategy](https://learn.microsoft.com/en-us/power-platform/alm/environment-strategy-alm)
 |Type|Domain Name|Domain Suffix|Url
 |----|-------------|----------------|-------------------|
 |DEV|contoso-dev|crm.dynamics.com|https://contoso-dev.crm.dynamics.com
@@ -29,7 +29,7 @@ Example (adjust to meet organization needs) [Environment Strategy](https://learn
 |PROD|contoso|crm.dynamics.com|https://contoso.crm.dynamics.com
 ## Active Directory (AD) Security Groups
 
-Example (adjust to meet organizational needs) [Dataverse Security](https://learn.microsoft.com/en-us/power-platform/admin/control-user-access).Expand as needed for each environment and role needed.
+Example: (adjust to meet organization needs) [Dataverse Security](https://learn.microsoft.com/en-us/power-platform/admin/control-user-access).Expand as needed for each environment and role needed.
 
 - D365-con-dev
     - Assign any AD user to access this environment
@@ -53,12 +53,16 @@ Example (adjust to meet organizational needs) [Dataverse Security](https://learn
     - Linked to Azure DevOps team
 ## Azure Application Registration
 
-Example (adjust to meet organizational needs) [Azure App Registration (SPN)](#).
+Example: (adjust to meet organization needs) [Azure App Registration (SPN)](#).
 
-- CON-PowerPlatform-dev-ServicePrincipal
-    - Add to each environment and assign System Customizer Role
-- CON-PowerPlatform-adm-ServicePrincipal
-    - Add to each environment and assign System Administrator Role
+- Dev-Deployment-App
+    - Add to each non-prod environment and assign System Administrator Role
+    - As a Global Office Admin run PowerShell command.
+        ```
+        - New-PowerAppManagementApp -ApplicationId <clientid>
+        ```
+- Deployment-App
+    - Add to prod environment and assign System Administrator Role
     - As a Global Office Admin run PowerShell command.
         ```
         - New-PowerAppManagementApp -ApplicationId <clientid>
