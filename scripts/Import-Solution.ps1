@@ -83,14 +83,14 @@ pac auth create --url "https://$DomainName.$DomainSuffix/" --applicationId "$Cli
 if ($SolutionPackageType -eq "unmanaged" -or $SolutionPackageType -eq "Unmanaged") {
 
     Write-Host "Packing Unmanaged Solution..."
-    pac solution pack --zipfile $ArtifactPath\Solutions\$_UnmanagedSolutionZipFileName --folder $SolutionSourcePath\$SolutionName --packagetype Unmanaged --allowDelete true --allowWrite true --clobber true --processCanvasApps true
+    pac solution pack --zipfile $ArtifactPath\Solutions\$_UnmanagedSolutionZipFileName --folder $SolutionSourcePath\$SolutionName --packagetype Unmanaged --allowDelete true --allowWrite true --clobber true --processCanvasApps false
     Write-Host "Prepairing Solution Import..."
     pac solution import --path $ArtifactPath\Solutions\$_UnmanagedSolutionZipFileName --activate-plugins true --force-overwrite true --publish-changes true --async true    
 }
 elseif ($SolutionPackageType -eq "managed" -or $SolutionPackageType -eq "Managed") {
     
     Write-Host "Packing Managed Solution..."
-    pac solution pack --zipfile $ArtifactPath\Solutions\$_ManagedSolutionZipFileName --folder $SolutionSourcePath\$SolutionName --packagetype Managed --allowDelete true --allowWrite true --clobber true --processCanvasApps true
+    pac solution pack --zipfile $ArtifactPath\Solutions\$_ManagedSolutionZipFileName --folder $SolutionSourcePath\$SolutionName --packagetype Managed --allowDelete true --allowWrite true --clobber true --processCanvasApps false
 
     if ($SolutionImportType -eq "Upgrade" -or $SolutionImportType -eq "upgrade") {
         

@@ -153,7 +153,7 @@ for ($i = 0; $i -lt $_Results.Count; $i++) {
 }
 #endregion
 #region Unpack Solution
-$_Results = pac solution unpack --zipfile $ArtifactPath\Solutions\$_UnmanagedSolutionZipFileName --folder $SolutionSourcePath\$SolutionName --packagetype Both --allowDelete true --allowWrite true --clobber true --processCanvasApps true
+$_Results = pac solution unpack --zipfile $ArtifactPath\Solutions\$_UnmanagedSolutionZipFileName --folder $SolutionSourcePath\$SolutionName --packagetype Both --allowDelete true --allowWrite true --clobber true --processCanvasApps false
 for ($i = 0; $i -lt $_Results.Count; $i++) {
     
     if ($_Results[$i].ToLower().StartsWith("error")) {
