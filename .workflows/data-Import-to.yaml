@@ -16,14 +16,31 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# Variable 'DomainName' was defined in the Variables tab
+# Variable 'DomainSuffix' was defined in the Variables tab
+# Variable 'DataSetName' was defined in the Variables tab
+
 trigger: none
 
 jobs:
-- job: Job
-  displayName: '...'
+- job: Job_1
+  displayName: Compress and Import data
   pool:
     vmImage: windows-2019
   steps:
-    - checkout: self
+  - checkout: self
     clean: true
-    persistCredentials: True # For Commit pipelines only
+  - task: PowerShell@2
+    displayName: Compress data
+    inputs:
+      filePath: scripts/Compress-ConfigData.ps1
+      arguments: -DataSetName $(DataSetName ) -ConfigPath $(System.DefaultWorkingDirectory)\config -ArtifactPath $(System.ArtifactsDirectory)
+  - task: PowerPlatformToolInstaller@2
+    displayName: Install Tools
+  - task: PowerPlatformImportData@2
+    displayName: Import Data
+    inputs:
+      authenticationType: PowerPlatformSPN
+      PowerPlatformSPN: https://$(DomainName).$(DomainSuffix)/
+      Environment: https://$(DomainName).$(DomainSuffix)/
+      DataFile: $(System.ArtifactsDirectory)\data\($DataSetName)_data.zip
