@@ -27,7 +27,7 @@ Example (adjust to meet organization needs) [Environment Strategy](https://learn
 |SIT|contoso-sit|crm.dynamics.com|https://contoso-sit.crm.dynamics.com
 |UAT|contoso-uat|crm.dynamics.com|https://contoso-uat.crm.dynamics.com
 |PROD|contoso|crm.dynamics.com|https://contoso.crm.dynamics.com
-admin## Active Directory (AD) Security Groups
+## Active Directory (AD) Security Groups
 
 Example (adjust to meet organizational needs) [Dataverse Security](https://learn.microsoft.com/en-us/power-platform/admin/control-user-access).Expand as needed for each environment and role needed.
 
